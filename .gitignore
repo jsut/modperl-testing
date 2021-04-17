@@ -1,0 +1,3 @@
+perl_src/perl-*
+perls/perl-*
+*.swp
