@@ -11,10 +11,11 @@ not there yet though
 
 1. checkout the repository
 2. put tar.gz's of the perls you want to test with into perl_src
-3. put tar.gz's of httpds you wan to test ingo httpd_src
-4. put tar.gz's of mod_perl source you want to test into mod_perl_src
-5. ./run.pl all
+3. put tar.gz's of httpds you wan to test into httpd_src
+4. put tar.gz's of apr and apr-util you want to build httpd with into httpd_src
+5. put tar.gz's of mod_perl source you want to test into mod_perl_src
+6. ./run.pl all
 
 ## Note
 
-this is a work in progress and is currently only installing perl(s)
+this is a work in progress and is currently only installing perl and httpd
