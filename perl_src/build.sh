@@ -7,6 +7,6 @@ sh Configure \
     -A ccflags=-fPIC \
     -Duseithreads \
     -Dusedevel \
-    -Dprefix="$2" && make && make install
+    -Dprefix=$2 && make && make install
 
 # HTML::HeadParser LWP::UserAgent CGI BSD::Resource Chatbot::Eliza
