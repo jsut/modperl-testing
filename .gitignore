@@ -1,6 +1,7 @@
 perl_src/perl-*
 httpd_src/httpd-*
 httpd_src/apr-*
+mod_perl_src/mod_perl-*
 perls/perl-*
 httpds/httpd-*
 *.swp
