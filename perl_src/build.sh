@@ -2,6 +2,8 @@
 
 cd $1
 
+make distclean
+
 sh Configure \
     -des \
     -A ccflags=-fPIC \
