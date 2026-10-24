@@ -102,16 +102,21 @@ sub configure_build_install_httpd {
     my $httpd_path = $parts[1];
     my @v_parts = split '-', $path;
     my $version = $v_parts[1];
-    my $install_path = abs_path(qq[httpds/$httpd_path]);
-    say "configuring, building and installing $version to $install_path";
+    my @installed;
 
-    say qq[$cwd/httpd_src/build.sh $path $install_path];
-    `$cwd/httpd_src/build.sh $path $install_path`;
+    foreach my $mpm (qw/worker event prefork/) {
+        say "configuring, building and installing $version with $mpm mpm";
+        my $install_path = abs_path(qq[httpds/$httpd_path-$mpm]);
+        say qq[$cwd/httpd_src/build.sh $path $install_path $mpm];
+        `$cwd/httpd_src/build.sh $path $install_path $mpm`;
+        push @installed, {
+            version => $version,
+            path => $install_path,
+            mpm => $mpm
+        };
+    }
 
-    return {
-        version => $version,
-        path => $install_path
-    };
+    return \@installed;
 }
 
 sub do_mod_perl {
