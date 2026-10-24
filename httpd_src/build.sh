@@ -3,6 +3,7 @@
 cd $1;
 
 ./configure \
+  --with-z=/usr/local \
   --prefix=$2 \
   --with-included-apr \
   --enable-deflate=static \
