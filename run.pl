@@ -59,7 +59,7 @@ sub install_cpan_modules {
 
     say "installing some cpan things for $perl->{'version'}";
 
-    print `$perl->{'path'}/bin/cpan$perl->{'version'} HTML::HeadParser LWP::UserAgent CGI BSD::Resource Chatbot::Eliza`;
+    print `PERL_MM_USE_DEFAULT=1 $perl->{'path'}/bin/cpan$perl->{'version'} HTML::HeadParser LWP::UserAgent CGI BSD::Resource Chatbot::Eliza`;
 }
 
 sub do_httpd {
